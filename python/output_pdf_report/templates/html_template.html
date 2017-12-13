@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<style> 
+	@page {
+    size: letter landscape;
+    margin: 2cm;
+	}
+	table, th, td {
+	border: none;
+    border-collapse: collapse;
+	}
+	tr {
+    text-align: center;
+	}
+	</style>
+    <title>{{ title }}</title>
+</head>
+<body>
+	<!-- <img src="C:\Users\Scott Clay\Documents\Projects\EUROLINK\oakland_logo.png" align="left"> -->
+	<!-- <img src="C:\Users\Scott Clay\Dropbox (Oakland)\my_projects\misc_code\python\templates\generic_logo.jpg", align="right", width="300"> -->
+	<img src="C:\Users\Scott Clay\Dropbox (Oakland)\my_projects\misc_code\python\templates\generic_logo.jpg", align="right", width="300">
+	<h1> Linley and Simpson November Move-in data analysis </h1>
+	<img src="C:\Users\Scott Clay\Dropbox (Oakland)\my_projects\EUROLINK\nov_plots.png", align = "middle", width="800">
+	<div> <pdf:nextpage /> </div>
+	<img src="C:\Users\Scott Clay\Dropbox (Oakland)\my_projects\EUROLINK\nov_plots2.png", align = "middle", width="800">
+	<br>
+	<br>
+	<h2>{{ title1 }}</h2>
+	{{ national_pivot_table1 }}
+	
+	<h2>{{ title2 }}</h2>
+	{{ national_pivot_table2 }}
+	
+</body>
+</html>
