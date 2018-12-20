@@ -1,0 +1,90 @@
+---
+title: "racing_tips"
+author: "Scott Clay"
+date: "20/12/2018"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+
+```{r}
+df_tips = read.csv('data/tips.csv')
+```
+
+
+```{r}
+summary(df_tips)
+```
+
+
+```{r}
+(df_tips_clean = df_tips %>% 
+  rename_all(tolower) %>%
+  rename_all(function(cols) str_replace_all(cols, pattern = ' ', replacement = '_')) %>%
+  mutate(bettype = str_replace_all(string=bettype, pattern = 'win', replacement = 'Win')) %>%
+  mutate_at(.vars = vars(id, tipster, track, horse, bettype, result),as.factor))
+
+summary(df_tips_clean)
+```
+
+#Exploratory Analysis
+
+```{r}
+map_df(df_tips_clean, n_distinct)
+```
+
+```{r}
+
+df_tipster_clean = df_tips_clean %>%
+  count(tipster)
+
+ggplot(df_tipster_clean, aes(x=fct_reorder(tipster,n), y=n)) + 
+  geom_col() +
+  coord_flip()
+```
+
+```{r}
+
+df_tipster_clean = df_tips_clean %>%
+  count(track)
+
+ggplot(df_tipster_clean, aes(x=fct_reorder(track,n), y=n)) + 
+  geom_col() +
+  coord_flip()
+```
+
+
+
+```{r}
+df_win_rate = df_tips_clean %>%
+  mutate(odds_rnd = round(odds,0),
+         result_int = ifelse(result == 'Win',1,0)) %>%
+  group_by(odds_rnd) %>%
+  summarise(win_rate = mean(result_int)) %>%
+  ungroup() %>%
+  mutate(implied_win_rate = 1./odds_rnd)
+
+
+```
+
+
+
+# LETS PLOT >=]
+
+```{r}
+
+df_win_rate_long = df_win_rate %>%
+  filter(odds_rnd < 21) %>%
+  gather(win_rate_group, value, c(win_rate, implied_win_rate))
+         
+ggplot(df_win_rate_long, aes(odds_rnd, value, color=win_rate_group)) + 
+  geom_line()
+
+
+```
+
+
