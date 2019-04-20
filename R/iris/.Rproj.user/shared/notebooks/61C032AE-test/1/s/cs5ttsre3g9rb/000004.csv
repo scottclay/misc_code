@@ -1,0 +1,3 @@
+"0","# filter() the data for species virginica"
+"0","virginica <- filter(iris, species == ""virginica"")"
+"0","head(virginica) # This dispalys the first six rows"

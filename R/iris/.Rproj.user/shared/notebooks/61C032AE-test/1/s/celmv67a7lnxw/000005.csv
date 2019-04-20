@@ -1,0 +1,2 @@
+"0","lr_data <- data.frame(predictor=glm.out$linear.predictors, prob=glm.out$fitted.values, Species=train$label)"
+"0","ggplot(lr_data, aes(x=predictor, y=prob, color=Species)) + geom_point()"

@@ -1,0 +1,4 @@
+"0","test <- test %>%"
+"0","    mutate(predict = predict(glm.out, test, type=""response"")) %>%"
+"0","    mutate(predict_label = if_else(predict >= 0.5, 1, 0))"
+"0","test"

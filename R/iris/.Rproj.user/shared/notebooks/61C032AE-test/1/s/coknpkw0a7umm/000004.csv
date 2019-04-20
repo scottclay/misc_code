@@ -1,0 +1,4 @@
+"0","iris_new <- iris %>%"
+"0","    mutate(label = if_else(species == 'setosa', 1, 0)) %>%"
+"0","    mutate(color = if_else(species == 'setosa', ""#00AFBB"", ""#E7B800""))"
+"0","iris_new"

@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1555792349282.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2879010610",
+    "id" : "471ECCE6",
+    "lastKnownWriteTime" : 1555801840,
+    "last_content_update" : 1555801841143,
+    "path" : "D:/Scott/Documents/R/iris/test.Rmd",
+    "project_path" : "test.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "92,6",
+        "scrollLine" : "91",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

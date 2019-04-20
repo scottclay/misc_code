@@ -1,0 +1,7 @@
+"0","set.seed(42) # Set Seed so that same sample can be reproduced in future also"
+"0","# Now Selecting 75% of data as sample from total 'n' rows of the data  "
+"0","sample <- sample.int(n = nrow(iris_new), size = floor(.75*nrow(iris_new)), replace = F)"
+"0","train <- iris_new[sample, ]%>% select(sepal.length, sepal.width, petal.length, petal.width, label)"
+"0","test  <- iris_new[-sample, ]%>% select(sepal.length, sepal.width, petal.length, petal.width, label)"
+"0",""
+"0",""
